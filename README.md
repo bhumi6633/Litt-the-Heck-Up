@@ -42,13 +42,19 @@ npm install
 ```
 
 ### 2. Set Up AI API Keys
-Create a `.env` file in the root directory and add your API keys:
+Copy the example environment file and add your API keys:
+
+```bash
+cp env.example .env
+```
+
+Then edit `.env` and add your actual API keys:
 
 ```env
 # Choose one or more AI providers
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
-VITE_OPENAI_API_KEY=your_openai_api_key_here
-VITE_ANTHROPIC_API_KEY=your_anthropic_api_key_here
+VITE_GEMINI_API_KEY=your_actual_gemini_key_here
+VITE_OPENAI_API_KEY=your_actual_openai_key_here
+VITE_ANTHROPIC_API_KEY=your_actual_anthropic_key_here
 ```
 
 ### 3. Get API Keys
