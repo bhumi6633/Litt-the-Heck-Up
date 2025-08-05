@@ -4,15 +4,15 @@
 
 ---
 
-### ☀ End of Summer. Start of Something Bigger.
+###  End of Summer. Start of Something Bigger.
 Summer’s almost over and school’s about to start.
-So I thought — why not build something fun before life gets hectic again?
+So I thought why not build something fun before life gets hectic again?
 
 I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little fun Suits-inspired web app called Litt the Heck Up.
 
 ---
 
-### 💡 What It Does
+###  What It Does
 
 1.  **Enter your goal**  
    e.g., "Wake up at 5AM", "Finish my resume", "Grind LeetCode"
@@ -53,9 +53,9 @@ Because motivation doesn't need to be fluffy and most important of all : I love 
 
 Now go get Litt.
 
-👩‍💻 Made with love, sass, and Suits — by Bhumi Shah
+### 👩‍💻 Made with love, sass, and Suits  by Bhumi Shah
 
 
 
-### 👩‍💻 Built with caffeine, chaos, and code by Bhumi Shah
+
 
