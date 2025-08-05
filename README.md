@@ -8,7 +8,6 @@
 
 Summer’s almost over and school’s about to start.
 So I thought why not build something fun before life gets hectic again?
-
 ### I’ve always been obsessed with Suits (Harvey, Donna, Mike... all of it), so I made a Suits-inspired web app where the characters either motivate you or roast you into greatness.
 ### If you're freaking out about being productive, let the Suits characters yell at you instead.
 ---
@@ -48,8 +47,7 @@ Because motivation doesn't need to be fluffy and most important of all : I love 
 
 ---
 
-> “You ever think maybe you're not good enough?  
-> Neither do I.” - Harvey Specter
+> " I don't have dreams, I have goals. " - Harvey Specter  
 
 Now go get Litt.
 
