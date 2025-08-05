@@ -83,7 +83,7 @@ const AboutPage = () => {
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-white font-['Inter',sans-serif] mb-6">
-            About Litt the Heck Up
+            About Litt The Heck Up
           </h1>
           <p className="text-xl text-slate-300 font-['Inter',sans-serif] max-w-3xl mx-auto">
             Your personal Suits-inspired motivation coach. Get the confidence of Harvey, 
@@ -166,7 +166,7 @@ const AboutPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 text-center py-8 text-slate-400 font-['Inter',sans-serif]">
-        <p>Made with love, sassand inspired by Suits</p>
+        <p>Made with love, sass and inspired by Suits</p>
       </footer>
 
       {/* Audio Button */}
