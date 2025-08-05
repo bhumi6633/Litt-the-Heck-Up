@@ -9,8 +9,8 @@
 Summer’s almost over and school’s about to start.
 So I thought why not build something fun before life gets hectic again?
 
-I’ve always been *obsessed* with Suits (Harvey, Donna, Mike... all of it), so I made a Suits-inspired web app where the characters either motivate you or roast you into greatness.
-If you're freaking out about being productive, let the Suits characters yell at you instead.
+**I’ve always been *obsessed* with Suits (Harvey, Donna, Mike... all of it), so I made a Suits-inspired web app where the characters either motivate you or roast you into greatness.
+If you're freaking out about being productive, let the Suits characters yell at you instead.**
 ---
 
 ###  What It Does
