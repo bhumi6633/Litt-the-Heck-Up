@@ -5,6 +5,7 @@
 ---
 
 ###  End of Summer. Start of Something Bigger.
+
 Summer’s almost over and school’s about to start.
 So I thought why not build something fun before life gets hectic again?
 
