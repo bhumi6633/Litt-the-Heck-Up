@@ -8,8 +8,8 @@
 Summer’s almost over and school’s about to start.
 So I thought why not build something fun before life gets hectic again?
 
-I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little fun Suits-inspired web app called Litt the Heck Up.
-
+I’ve always been *obsessed* with Suits (Harvey, Donna, Mike... all of it), so I made a Suits-inspired web app where the characters either motivate you or roast you into greatness.
+If you're freaking out about being productive, let the Suits characters yell at you instead.
 ---
 
 ###  What It Does
@@ -19,9 +19,9 @@ I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little
 
 2.  **Click 'Litt Me'**  
    Instantly get:
-   -  A *Harvey*-style motivational quote  
-   -  A *Louis*-style roast to fire you up  
-   -  A 3-step *Harvey Specter* power plan
+   -  A motivational quote  
+   -  A roast to fire you up  
+   -  A 3-step  power plan
 
 3.  **Add another goal**
    Stack your motivation. Track your grind.
