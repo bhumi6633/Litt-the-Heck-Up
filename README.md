@@ -40,10 +40,9 @@ So I thought why not build something fun before life gets hectic again?
 
 ---
 
-###  Why I Built This
-
-Because goal-setting apps are boring.  
-Because motivation doesn't need to be fluffy and most important of all : I love and live by Harvey's mindset. 
+###  Why I Built This :
+- Because goal-setting apps are boring.  
+- Because motivation doesn't need to be fluffy and most important of all : I love and live by Harvey's mindset. 
 
 ---
 
