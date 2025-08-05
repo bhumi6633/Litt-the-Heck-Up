@@ -51,7 +51,7 @@ Because motivation doesn't need to be fluffy and most important of all : I love 
 
 Now go get Litt.
 
-### 👩‍💻 Made with love, sass, and Suits by Bhumi Shah
+### Made with love, sass, and Suits by Bhumi Shah👩‍💻
 
 
 
