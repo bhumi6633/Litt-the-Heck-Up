@@ -193,19 +193,7 @@ const SettingsPage = () => {
               </p>
             </div>
 
-            {/* API Key Info */}
-            <div className="bg-amber-500/20 border border-amber-400/30 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-amber-200 mb-3">🔑 API Setup</h3>
-              <p className="text-slate-300 text-sm mb-4">
-                To enable AI-generated content, add your Gemini API key to the <code className="bg-slate-700 px-2 py-1 rounded">.env</code> file:
-              </p>
-              <div className="bg-slate-800 p-4 rounded-lg">
-                <code className="text-amber-200 text-sm">VITE_GEMINI_API_KEY=your_gemini_api_key_here</code>
-              </div>
-              <p className="text-slate-400 text-xs mt-3">
-                Get your free API key from: <a href="https://makersuite.google.com/app/apikey" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200 underline">Google AI Studio</a>
-              </p>
-            </div>
+
           </div>
         </div>
       </main>
