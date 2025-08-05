@@ -187,15 +187,15 @@ const AppPage = () => {
       <header className="relative z-10 bg-[#0B0F1A] shadow-lg border-b border-slate-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
-            <Link to="/" className="text-2xl font-bold text-white font-['Inter',sans-serif]">
+            <Link to="/" className="text-3xl font-display text-white tracking-wide">
               Litt the Heck Up
             </Link>
             <div className="flex items-center space-x-4">
               <Link 
                 to="/settings" 
-                className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl px-6 py-3 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white font-heading font-semibold rounded-xl px-6 py-3 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                 Settings
+                Settings
               </Link>
             </div>
           </div>
@@ -219,6 +219,10 @@ const AppPage = () => {
               onInputBlur={() => setInputFocused(false)}
               onInputHover={handleInputHover}
               onButtonHover={handleButtonHover}
+              personalityMode={personalityMode}
+              setPersonalityMode={setPersonalityMode}
+              suitsMode={suitsMode}
+              setSuitsMode={setSuitsMode}
             />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import CharacterSelector from './CharacterSelector.jsx';
 
 const GoalInput = ({
   goal,
@@ -11,7 +12,11 @@ const GoalInput = ({
   onInputFocus,
   onInputBlur,
   onInputHover,
-  onButtonHover
+  onButtonHover,
+  personalityMode,
+  setPersonalityMode,
+  suitsMode,
+  setSuitsMode
 }) => {
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !loading) {
@@ -22,8 +27,31 @@ const GoalInput = ({
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-2xl font-bold text-white mb-2">What's your goal? 💼</h2>
-        <p className="text-slate-300 text-sm mb-4">"Make it bold. Make it count." - Harvey Specter</p>
+        <h2 className="text-3xl font-display text-white mb-2 tracking-wide">What's your goal?</h2>
+        <p className="text-slate-300 text-lg mb-4 font-quote italic">"Win a no-win situation by rewriting the rules." - Harvey Specter</p>
+      </div>
+
+      {/* Character Selector */}
+      <CharacterSelector 
+        selectedCharacter={suitsMode}
+        onCharacterSelect={setSuitsMode}
+      />
+
+      {/* Personality Mode Selection */}
+      <div className="flex-1">
+        <select
+          value={personalityMode}
+          onChange={(e) => setPersonalityMode(e.target.value)}
+          className="w-full px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-heading font-semibold rounded-xl focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 transition-all duration-200 shadow-lg hover:shadow-xl"
+        >
+          <option value="both">Motivation + Roast</option>
+          <option value="motivate">Motivation Only</option>
+          <option value="roast">Roast Only</option>
+        </select>
+      </div>
+
+      {/* Goal Input */}
+      <div>
         <textarea
           id="goal"
           value={goal}
@@ -33,7 +61,7 @@ const GoalInput = ({
           onBlur={onInputBlur}
           onMouseEnter={onInputHover}
           placeholder="e.g., Wake up at 5AM daily, Get an internship at IBM, Learn to code..."
-          className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 resize-none text-white placeholder-slate-400 font-['Inter',sans-serif]"
+          className="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 resize-none text-white placeholder-slate-400 font-ui"
           rows="4"
           disabled={loading}
         />
@@ -45,7 +73,7 @@ const GoalInput = ({
           onMouseEnter={() => onButtonHover(true)}
           onMouseLeave={() => onButtonHover(false)}
           disabled={loading || !goal.trim()}
-          className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
+          className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-heading font-semibold rounded-xl px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
         >
           {loading ? (
             <span className="flex items-center justify-center">

@@ -11,7 +11,8 @@ const SettingsPage = () => {
     { id: 'harvey', name: 'Harvey Specter', description: 'Bold, confident, and results-oriented' },
     { id: 'donna', name: 'Donna Paulsen', description: 'Wise, supportive, and empowering' },
     { id: 'mike', name: 'Mike Ross', description: 'Analytical, principled, and solution-focused' },
-    { id: 'louis', name: 'Louis Litt', description: 'Intense, competitive, and fiercely ambitious' }
+    { id: 'louis', name: 'Louis Litt', description: 'Intense, competitive, and fiercely ambitious' },
+    { id: 'jessica', name: 'Jessica Pearson', description: 'Commanding, authoritative, and strategic' }
   ];
 
   const personalityModes = [
@@ -134,23 +135,45 @@ const SettingsPage = () => {
             {/* Suits Character */}
             <div>
               <h2 className="text-2xl font-semibold text-white mb-6 font-['Inter',sans-serif]">Suits Character</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {characters.map((character) => (
-                  <button
-                    key={character.id}
-                    onClick={() => setSuitsMode(character.id)}
-                    className={`p-6 rounded-xl border-2 transition-all duration-200 ${
-                      suitsMode === character.id
-                        ? 'border-indigo-400 bg-indigo-500/20 text-indigo-200 shadow-lg'
-                        : 'border-slate-600 hover:border-indigo-400 text-slate-300 hover:text-white'
-                    }`}
-                  >
-                    <div className="text-center">
-                      <div className="font-semibold text-lg">{character.name}</div>
-                      <div className="text-xs text-slate-400 mt-2">{character.description}</div>
-                    </div>
-                  </button>
-                ))}
+                            <div className="space-y-4">
+                {/* First row - 3 characters */}
+                <div className="grid grid-cols-3 gap-4">
+                  {characters.slice(0, 3).map((character) => (
+                    <button
+                      key={character.id}
+                      onClick={() => setSuitsMode(character.id)}
+                      className={`p-6 rounded-xl border-2 transition-all duration-200 ${
+                        suitsMode === character.id
+                          ? 'border-indigo-400 bg-indigo-500/20 text-indigo-200 shadow-lg'
+                          : 'border-slate-600 hover:border-indigo-400 text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="font-semibold text-lg">{character.name}</div>
+                        <div className="text-xs text-slate-400 mt-2">{character.description}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+                {/* Second row - 2 characters centered */}
+                <div className="flex justify-center gap-4">
+                  {characters.slice(3, 5).map((character) => (
+                    <button
+                      key={character.id}
+                      onClick={() => setSuitsMode(character.id)}
+                      className={`p-6 rounded-xl border-2 transition-all duration-200 ${
+                        suitsMode === character.id
+                          ? 'border-indigo-400 bg-indigo-500/20 text-indigo-200 shadow-lg'
+                          : 'border-slate-600 hover:border-indigo-400 text-slate-300 hover:text-white'
+                      }`}
+                    >
+                      <div className="text-center">
+                        <div className="font-semibold text-lg">{character.name}</div>
+                        <div className="text-xs text-slate-400 mt-2">{character.description}</div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 

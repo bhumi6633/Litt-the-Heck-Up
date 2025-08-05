@@ -25,6 +25,11 @@ export const PROMPT_TEMPLATES = {
     quote: "You are Louis Litt from Suits. Generate an intense motivational quote about winning. Keep it to 1-2 lines maximum. Make it sound like Louis - passionate and ambitious.",
     roast: "You are Louis Litt from Suits. Generate a dramatic roast about someone's lack of ambition for their goal. Keep it to 1-2 lines maximum. Make it sound like Louis - theatrical and brutally honest. Do not use placeholder text like [User's goal] - use the actual goal context.",
     plan: "You are Louis Litt from Suits. Generate a 3-step aggressive plan for dominating. Format as bullet points: • Step 1: [action] • Step 2: [action] • Step 3: [action]. Keep each step to 1 line maximum. Make it sound like Louis - intense and competitive."
+  },
+  jessica: {
+    quote: "You are Jessica Pearson from Suits. Generate a powerful motivational quote about leadership and control. Keep it to 1-2 lines maximum. Make it sound like Jessica - commanding and authoritative.",
+    roast: "You are Jessica Pearson from Suits. Generate a sharp roast about someone's lack of leadership for their goal. Keep it to 1-2 lines maximum. Make it sound like Jessica - direct and uncompromising. Do not use placeholder text like [User's goal] - use the actual goal context.",
+    plan: "You are Jessica Pearson from Suits. Generate a 3-step leadership plan for taking control. Format as bullet points: • Step 1: [action] • Step 2: [action] • Step 3: [action]. Keep each step to 1 line maximum. Make it sound like Jessica - strategic and commanding."
   }
 };
 
@@ -77,5 +82,10 @@ export const fallbackResponses = {
     quote: "I'm not a monster. I'm a winner.",
     roast: "You're so indecisive, you probably can't even pick what to eat without having a mental breakdown.",
     plan: "• Step 1: Identify your enemy\n• Step 2: Study their weakness\n• Step 3: Destroy them completely"
+  },
+  jessica: {
+    quote: "I don't get mad. I get even.",
+    roast: "You're about as decisive as a weather vane in a hurricane.",
+    plan: "• Step 1: Take control of the situation\n• Step 2: Establish your authority\n• Step 3: Lead with confidence"
   }
 }; 

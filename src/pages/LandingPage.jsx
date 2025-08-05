@@ -49,7 +49,7 @@ const LandingPage = () => {
           </Link>
 
           {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mt-20">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
               <h3 className="text-xl font-semibold mb-2">Harvey's Confidence</h3>
               <p className="text-slate-300">Bold, strategic motivation that gets results.</p>
@@ -65,6 +65,10 @@ const LandingPage = () => {
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
               <h3 className="text-xl font-semibold mb-2">Mike's Strategy</h3>
               <p className="text-slate-300">Analytical thinking and practical solutions.</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
+              <h3 className="text-xl font-semibold mb-2">Jessica's Authority</h3>
+              <p className="text-slate-300">Commanding leadership that takes control.</p>
             </div>
           </div>
         </div>

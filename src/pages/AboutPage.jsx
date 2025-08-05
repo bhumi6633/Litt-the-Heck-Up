@@ -23,6 +23,11 @@ const AboutPage = () => {
       character: "Louis Litt",
       quote: "I'm not a monster. I'm a winner.",
       context: "Louis's competitive drive and ambition"
+    },
+    {
+      character: "Jessica Pearson",
+      quote: "I do not respond to threats. I make them.",
+      context: "Jessica's commanding authority and leadership"
     }
   ];
 
@@ -35,7 +40,7 @@ const AboutPage = () => {
     {
       step: "2",
       title: "Choose Your Coach",
-      description: "Pick your Suits character: Harvey for confidence, Donna for wisdom, Mike for strategy, or Louis for fire.",
+              description: "Pick your Suits character: Harvey for confidence, Donna for wisdom, Mike for strategy, Louis for fire, or Jessica for authority.",
     },
     {
       step: "3",
@@ -108,7 +113,7 @@ const AboutPage = () => {
           <h2 className="text-3xl font-bold text-white mb-8 text-center font-['Inter',sans-serif]">
             Top Suits Quotes
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {topQuotes.map((quote, index) => (
               <div key={index} className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
                 <div className="flex items-start space-x-4">
