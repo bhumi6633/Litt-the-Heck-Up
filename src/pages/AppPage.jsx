@@ -87,14 +87,14 @@ const AppPage = () => {
       // Generate content based on personality mode
       if (personalityMode === 'motivate' || personalityMode === 'both') {
         try {
-          results.quote = await aiService.generateContent(prompts.quote, character, 'quote');
+          results.quote = await aiService.generateContent(prompts.quote, character, 'quote', userGoal);
         } catch (error) {
           console.error('Error generating quote:', error);
           results.quote = fallbackResponses[character].quote;
         }
 
         try {
-          results.plan = await aiService.generateContent(prompts.plan, character, 'plan');
+          results.plan = await aiService.generateContent(prompts.plan, character, 'plan', userGoal);
         } catch (error) {
           console.error('Error generating plan:', error);
           results.plan = fallbackResponses[character].plan;
@@ -103,7 +103,7 @@ const AppPage = () => {
 
       if (personalityMode === 'roast' || personalityMode === 'both') {
         try {
-          results.roast = await aiService.generateContent(prompts.roast, character, 'roast');
+          results.roast = await aiService.generateContent(prompts.roast, character, 'roast', userGoal);
         } catch (error) {
           console.error('Error generating roast:', error);
           results.roast = fallbackResponses[character].roast;

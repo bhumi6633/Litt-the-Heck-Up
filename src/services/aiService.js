@@ -18,16 +18,16 @@ class AIService {
     }
   }
 
-  async generateContent(prompt, character, contentType) {
+  async generateContent(prompt, character, contentType, userGoal) {
     if (!this.apiKey) {
       throw new Error('Missing Gemini API key. Please add VITE_GEMINI_API_KEY to your environment variables.');
     }
 
-    return this.retryOperation(() => this.callGeminiAPI(prompt, character, contentType));
+    return this.retryOperation(() => this.callGeminiAPI(prompt, character, contentType, userGoal));
   }
 
-  async callGeminiAPI(prompt, character, contentType) {
-    const fullPrompt = `${prompt}\n\nUser's goal: ${contentType === 'quote' ? 'Achieving their goals' : 'Their current situation'}\n\nGenerate a ${contentType} in the style of ${character} from Suits.`;
+  async callGeminiAPI(prompt, character, contentType, userGoal) {
+    const fullPrompt = `${prompt}\n\nUser's goal: ${userGoal}\n\nGenerate a ${contentType} in the style of ${character} from Suits.`;
 
     const res = await fetch(`${GEMINI_CONFIG.URL}?key=${this.apiKey}`, {
       method: 'POST',
