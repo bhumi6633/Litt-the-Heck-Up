@@ -27,7 +27,7 @@ I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little
    Stack your motivation. Track your grind.
 
 4.  **View past goals**
-   See what you've committed to — and what Suits character called you out for it.
+   See what you've committed to and what Suits character called you out for it.
 
 ---
 
