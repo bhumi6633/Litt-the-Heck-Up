@@ -8,16 +8,16 @@ const SettingsPage = () => {
   const [history, setHistory] = useState([]);
 
   const characters = [
-    { id: 'harvey', name: 'Harvey Specter', emoji: '💼', description: 'Bold, confident, and results-oriented' },
-    { id: 'donna', name: 'Donna Paulsen', emoji: '👑', description: 'Wise, supportive, and empowering' },
-    { id: 'mike', name: 'Mike Ross', emoji: '🧠', description: 'Analytical, principled, and solution-focused' },
-    { id: 'louis', name: 'Louis Litt', emoji: '🔥', description: 'Intense, competitive, and fiercely ambitious' }
+    { id: 'harvey', name: 'Harvey Specter', description: 'Bold, confident, and results-oriented' },
+    { id: 'donna', name: 'Donna Paulsen', description: 'Wise, supportive, and empowering' },
+    { id: 'mike', name: 'Mike Ross', description: 'Analytical, principled, and solution-focused' },
+    { id: 'louis', name: 'Louis Litt', description: 'Intense, competitive, and fiercely ambitious' }
   ];
 
   const personalityModes = [
-    { id: 'motivate', name: 'Motivate Me', emoji: '💬', description: 'Only quote + plan' },
-    { id: 'roast', name: 'Roast Me', emoji: '🔥', description: 'Only roast' },
-    { id: 'both', name: 'Both', emoji: '💬🔥', description: 'All 3 - quote, roast, and plan' }
+    { id: 'motivate', name: 'Motivate Me', description: 'Only quote + plan' },
+    { id: 'roast', name: 'Roast Me', description: 'Only roast' },
+    { id: 'both', name: 'Both', description: 'All 3 - quote, roast, and plan' }
   ];
 
   // Load settings from localStorage
@@ -103,7 +103,7 @@ const SettingsPage = () => {
         <div className="bg-slate-800/90 backdrop-blur-md border border-slate-700 rounded-2xl shadow-2xl p-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-white font-['Inter',sans-serif] mb-4">⚙️ Settings</h1>
+            <h1 className="text-4xl font-bold text-white font-['Inter',sans-serif] mb-4">Settings</h1>
             <p className="text-slate-300 font-['Inter',sans-serif]">Customize your Suits experience</p>
           </div>
 
@@ -123,7 +123,6 @@ const SettingsPage = () => {
                     }`}
                   >
                     <div className="text-center">
-                      <div className="text-3xl mb-3">{mode.emoji}</div>
                       <div className="font-semibold text-lg">{mode.name}</div>
                       <div className="text-xs text-slate-400 mt-2">{mode.description}</div>
                     </div>
@@ -146,12 +145,9 @@ const SettingsPage = () => {
                         : 'border-slate-600 hover:border-indigo-400 text-slate-300 hover:text-white'
                     }`}
                   >
-                    <div className="flex items-center space-x-4">
-                      <span className="text-3xl">{character.emoji}</span>
-                      <div className="text-left">
-                        <div className="font-semibold text-lg">{character.name}</div>
-                        <div className="text-xs text-slate-400">{character.description}</div>
-                      </div>
+                    <div className="text-center">
+                      <div className="font-semibold text-lg">{character.name}</div>
+                      <div className="text-xs text-slate-400 mt-2">{character.description}</div>
                     </div>
                   </button>
                 ))}
@@ -167,11 +163,11 @@ const SettingsPage = () => {
                   disabled={history.length === 0}
                   className="p-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
-                  📤 Export History
+                  Export History
                 </button>
                 
                 <label className="p-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl cursor-pointer transition-all duration-200 shadow-lg hover:shadow-xl text-center">
-                  📥 Import History
+                  Import History
                   <input
                     type="file"
                     accept=".json"
@@ -185,7 +181,7 @@ const SettingsPage = () => {
                   disabled={history.length === 0}
                   className="p-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-lg hover:shadow-xl"
                 >
-                  🗑️ Clear History
+                  Clear History
                 </button>
               </div>
               <p className="text-slate-400 text-sm mt-4">

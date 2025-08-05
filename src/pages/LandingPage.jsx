@@ -28,7 +28,7 @@ const LandingPage = () => {
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
           <h1 className="text-6xl md:text-8xl font-bold text-white font-['Inter',sans-serif] mb-8 leading-tight">
-            Litt the heck up.
+            Litt The Heck Up.
             <br />
             <span className="text-indigo-400">Every day.</span>
           </h1>
@@ -51,19 +51,19 @@ const LandingPage = () => {
           {/* Features */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Harvey's Confidence 💼</h3>
+              <h3 className="text-xl font-semibold mb-2">Harvey's Confidence</h3>
               <p className="text-slate-300">Bold, strategic motivation that gets results.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Louis's Fire 🔥</h3>
+              <h3 className="text-xl font-semibold mb-2">Louis's Fire</h3>
               <p className="text-slate-300">Savage roasts that light a fire under you.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Donna's Wisdom 👑</h3>
+              <h3 className="text-xl font-semibold mb-2">Donna's Wisdom</h3>
               <p className="text-slate-300">Empowering guidance that builds confidence.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6">
-              <h3 className="text-xl font-semibold mb-2">Mike's Strategy 🧠</h3>
+              <h3 className="text-xl font-semibold mb-2">Mike's Strategy</h3>
               <p className="text-slate-300">Analytical thinking and practical solutions.</p>
             </div>
           </div>
