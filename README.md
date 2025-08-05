@@ -17,7 +17,7 @@ I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little
 1.  **Enter your goal**  
    e.g., "Wake up at 5AM", "Finish my resume", "Grind LeetCode"
 
-2. ⚡ **Click 'Litt Me'**  
+2.  **Click 'Litt Me'**  
    Instantly get:
    -  A *Harvey*-style motivational quote  
    -  A *Louis*-style roast to fire you up  
