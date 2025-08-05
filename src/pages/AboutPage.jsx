@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AudioButton from '../components/AudioButton.jsx';
 
 const AboutPage = () => {
   const topQuotes = [
@@ -166,6 +167,9 @@ const AboutPage = () => {
       <footer className="relative z-10 text-center py-8 text-slate-400 font-['Inter',sans-serif]">
         <p>Made with ❤️ and inspired by Suits</p>
       </footer>
+
+      {/* Audio Button */}
+      <AudioButton />
     </div>
   );
 };

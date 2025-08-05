@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AudioButton from '../components/AudioButton.jsx';
 
 const SettingsPage = () => {
   const [personalityMode, setPersonalityMode] = useState('both');
@@ -208,6 +209,9 @@ const SettingsPage = () => {
           </div>
         </div>
       </main>
+
+      {/* Audio Button */}
+      <AudioButton />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AudioButton from '../components/AudioButton.jsx';
 
 const LandingPage = () => {
   return (
@@ -68,12 +69,15 @@ const LandingPage = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="relative z-10 text-center pb-8 text-slate-400 font-['Inter',sans-serif]">
-        <p>"You ever think maybe you're not good enough? Neither do I." - Harvey Specter</p>
-      </div>
-    </div>
-  );
-};
+                   {/* Footer */}
+             <div className="relative z-10 text-center pb-8 text-slate-400 font-['Inter',sans-serif]">
+               <p>"You ever think maybe you're not good enough? Neither do I." - Harvey Specter</p>
+             </div>
+
+             {/* Audio Button */}
+             <AudioButton />
+           </div>
+         );
+       };
 
 export default LandingPage; 

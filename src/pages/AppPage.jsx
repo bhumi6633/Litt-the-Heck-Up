@@ -6,6 +6,7 @@ import FloatingChatBubble from '../components/FloatingChatBubble.jsx';
 import GoalInput from '../components/GoalInput.jsx';
 import ResultCard from '../components/ResultCard.jsx';
 import HistorySection from '../components/HistorySection.jsx';
+import AudioButton from '../components/AudioButton.jsx';
 
 const AppPage = () => {
   const [goal, setGoal] = useState('');
@@ -255,6 +256,9 @@ const AppPage = () => {
         visible={chatVisible}
         position={mousePosition}
       />
+
+      {/* Audio Button */}
+      <AudioButton />
 
       {/* API Key Warning */}
       {!aiService.hasApiKey() && (
