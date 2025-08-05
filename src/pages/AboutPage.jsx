@@ -6,25 +6,21 @@ const AboutPage = () => {
   const topQuotes = [
     {
       character: "Harvey Specter",
-      emoji: "💼",
       quote: "You ever think maybe you're not good enough? Neither do I.",
       context: "Harvey's confidence and self-assurance"
     },
     {
       character: "Donna Paulsen",
-      emoji: "👑",
       quote: "I know everything. It's my job.",
       context: "Donna's wisdom and competence"
     },
     {
       character: "Mike Ross",
-      emoji: "🧠",
       quote: "I'm not a real lawyer, but I am a real pain in the ass.",
       context: "Mike's determination and resourcefulness"
     },
     {
       character: "Louis Litt",
-      emoji: "🔥",
       quote: "I'm not a monster. I'm a winner.",
       context: "Louis's competitive drive and ambition"
     }
@@ -56,8 +52,8 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
       {/* Hero Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-slate-800/80 to-slate-900/90">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.1)_1px,transparent_0)] bg-[length:20px_20px]"></div>
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: 'url(/wp2732690-suits-wallpapers.png)' }}>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-slate-800/70 to-slate-900/80"></div>
       </div>
 
       {/* Header */}
@@ -165,7 +161,7 @@ const AboutPage = () => {
 
       {/* Footer */}
       <footer className="relative z-10 text-center py-8 text-slate-400 font-['Inter',sans-serif]">
-        <p>Made with ❤️ and inspired by Suits</p>
+        <p>Made with love, sassand inspired by Suits</p>
       </footer>
 
       {/* Audio Button */}
