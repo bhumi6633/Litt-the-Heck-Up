@@ -49,7 +49,7 @@ Because motivation doesn't need to be fluffy and most important of all : I love 
 ---
 
 > “You ever think maybe you're not good enough?  
-> Neither do I.” — Harvey Specter
+> Neither do I.” - Harvey Specter
 
 Now go get Litt.
 
