@@ -40,40 +40,10 @@ I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little
 
 ---
 
-### 🚀 Quick Setup
-
-1. **Clone & Install**
-   ```bash
-   git clone <your-repo>
-   cd Litt-the-Heck-Up
-   npm install
-   ```
-
-2. **Add Your Gemini API Key**
-   ```bash
-   # Copy .env.example to .env
-   cp .env.example .env
-   
-   # Edit .env and add your Gemini API key
-   VITE_GEMINI_API_KEY=your_actual_gemini_key_here
-   ```
-   
-   Get your free API key from: https://makersuite.google.com/app/apikey
-
-3. **Run the App**
-   ```bash
-   npm run dev
-   ```
-   
-   Open http://localhost:3000 and start getting Litt!
-
----
-
 ###  Why I Built This
 
 Because goal-setting apps are boring.  
 Because motivation doesn't need to be fluffy and most important of all : I love and live by Harvey's mindset. **
-
 
 ---
 
@@ -82,7 +52,7 @@ Because motivation doesn't need to be fluffy and most important of all : I love 
 
 Now go get Litt.
 
-### 👩‍💻 Made with love, sass, and Suits  by Bhumi Shah
+### 👩‍💻 Made with love, sass, and Suits by Bhumi Shah
 
 
 
