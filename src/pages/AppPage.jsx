@@ -195,7 +195,7 @@ const AppPage = () => {
                 to="/settings" 
                 className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl px-6 py-3 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                ⚙️ Settings
+                 Settings
               </Link>
             </div>
           </div>

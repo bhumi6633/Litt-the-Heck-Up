@@ -13,15 +13,7 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
     return names[character] || character;
   };
 
-  const getCharacterEmoji = (character) => {
-    const emojis = {
-      harvey: '💼',
-      donna: '👑',
-      mike: '🧠',
-      louis: '🔥'
-    };
-    return emojis[character] || '💼';
-  };
+
 
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp);
@@ -79,10 +71,10 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
     return (
       <div className="bg-white rounded-lg shadow-md p-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">🗂️ History</h2>
+          <h2 className="text-xl font-semibold text-gray-900">History</h2>
           <div className="flex space-x-2">
             <label className="cursor-pointer px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm">
-              📥 Import
+              Import
               <input
                 type="file"
                 accept=".json"
@@ -103,16 +95,16 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-semibold text-gray-900">🗂️ History</h2>
+        <h2 className="text-xl font-semibold text-gray-900">History</h2>
         <div className="flex space-x-2">
           <button
             onClick={exportHistory}
             className="px-3 py-1 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition-colors text-sm"
           >
-            📤 Export
+            Export
           </button>
           <label className="cursor-pointer px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg hover:bg-indigo-200 transition-colors text-sm">
-            📥 Import
+            Import
             <input
               type="file"
               accept=".json"
@@ -124,7 +116,7 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
             onClick={clearHistory}
             className="px-3 py-1 bg-red-100 text-red-700 rounded-lg hover:bg-red-200 transition-colors text-sm"
           >
-            🗑️ Clear
+            Clear
           </button>
         </div>
       </div>
@@ -138,7 +130,6 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center space-x-2">
-                <span className="text-lg">{getCharacterEmoji(item.character)}</span>
                 <span className="text-sm font-medium text-gray-700">
                   {getCharacterName(item.character)}
                 </span>
@@ -153,10 +144,6 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
 
             {/* Mode indicator */}
             <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
-              <span>
-                {item.personalityMode === 'both' ? '💬🔥' : 
-                 item.personalityMode === 'motivate' ? '💬' : '🔥'}
-              </span>
               <span className="text-xs">
                 {item.personalityMode === 'both' ? 'Motivate + Roast' : 
                  item.personalityMode === 'motivate' ? 'Motivate Only' : 'Roast Only'}
@@ -169,7 +156,7 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
                 {/* Quote */}
                 {(item.personalityMode === 'motivate' || item.personalityMode === 'both') && item.quote && (
                   <div className="border-l-2 border-indigo-500 pl-3">
-                    <h4 className="text-xs font-medium text-indigo-700 mb-1">💬 Motivation</h4>
+                    <h4 className="text-xs font-medium text-indigo-700 mb-1">Motivation</h4>
                     <p className="text-sm text-gray-700 italic">"{item.quote}"</p>
                   </div>
                 )}
@@ -177,7 +164,7 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
                 {/* Roast */}
                 {(item.personalityMode === 'roast' || item.personalityMode === 'both') && item.roast && (
                   <div className="border-l-2 border-red-500 pl-3">
-                    <h4 className="text-xs font-medium text-red-700 mb-1">🔥 Roast</h4>
+                    <h4 className="text-xs font-medium text-red-700 mb-1">Roast</h4>
                     <p className="text-sm text-gray-700 italic">"{item.roast}"</p>
                   </div>
                 )}
@@ -185,7 +172,7 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
                 {/* Plan */}
                 {(item.personalityMode === 'motivate' || item.personalityMode === 'both') && item.plan && (
                   <div className="border-l-2 border-green-500 pl-3">
-                    <h4 className="text-xs font-medium text-green-700 mb-1">📋 Strategy</h4>
+                    <h4 className="text-xs font-medium text-green-700 mb-1">Strategy</h4>
                     <div className="text-sm text-gray-700">
                       {item.plan.split('\n').map((step, index) => (
                         <div key={index} className="mb-1">

@@ -72,7 +72,7 @@ const LandingPage = () => {
 
                    {/* Footer */}
              <div className="relative z-10 text-center pb-8 text-slate-400 font-['Inter',sans-serif]">
-               <p>"You ever think maybe you're not good enough? Neither do I." - Harvey Specter</p>
+               <p>"When you're backed against the wall, break the goddamn thing down." - Harvey Specter</p>
              </div>
 
              {/* Audio Button */}
