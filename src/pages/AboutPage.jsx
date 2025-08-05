@@ -6,7 +6,7 @@ const AboutPage = () => {
   const topQuotes = [
     {
       character: "Harvey Specter",
-      quote: "You ever think maybe you're not good enough? Neither do I.",
+      quote: "Win a no-win situation by rewriting the rules.",
       context: "Harvey's confidence and self-assurance"
     },
     {
