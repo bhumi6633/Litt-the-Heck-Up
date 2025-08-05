@@ -1,4 +1,4 @@
-# Litt the Heck Up
+# Litt The Heck Up
 > Get roasted. Get motivated. Get results.  
 > *Inspired by Suits.*
 
