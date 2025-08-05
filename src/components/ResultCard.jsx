@@ -51,7 +51,13 @@ const ResultCard = ({ result, personalityMode, suitsMode }) => {
           {(personalityMode === 'motivate' || personalityMode === 'both') && result.plan && (
             <div className="border-l-4 border-green-500 pl-4">
               <h4 className="text-sm font-semibold text-green-700 mb-2">Strategy</h4>
-              <p className="text-gray-900">{result.plan}</p>
+              <div className="text-gray-900">
+                {result.plan.split('\n').map((step, index) => (
+                  <div key={index} className="mb-1">
+                    {step}
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </div>

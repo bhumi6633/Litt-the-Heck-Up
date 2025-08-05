@@ -186,7 +186,13 @@ const HistorySection = ({ history, personalityMode, suitsMode, onHistoryChange }
                 {(item.personalityMode === 'motivate' || item.personalityMode === 'both') && item.plan && (
                   <div className="border-l-2 border-green-500 pl-3">
                     <h4 className="text-xs font-medium text-green-700 mb-1">📋 Strategy</h4>
-                    <p className="text-sm text-gray-700">{item.plan}</p>
+                    <div className="text-sm text-gray-700">
+                      {item.plan.split('\n').map((step, index) => (
+                        <div key={index} className="mb-1">
+                          {step}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
