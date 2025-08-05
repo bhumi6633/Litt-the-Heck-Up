@@ -14,7 +14,6 @@ function App() {
   const [history, setHistory] = useState([]);
   const [personalityMode, setPersonalityMode] = useState('both'); // 'motivate', 'roast', 'both'
   const [suitsMode, setSuitsMode] = useState('harvey'); // 'harvey', 'donna', 'mike', 'louis'
-  const [aiProvider, setAiProvider] = useState('gemini');
   const [showSettings, setShowSettings] = useState(false);
   const [chatMessage, setChatMessage] = useState('');
   const [chatVisible, setChatVisible] = useState(false);
@@ -161,10 +160,7 @@ function App() {
     setButtonHovered(isHovered);
   };
 
-  const handleProviderChange = (provider) => {
-    setAiProvider(provider);
-    aiService.setProvider(provider);
-  };
+
 
   return (
     <div className="min-h-screen bg-slate-100 text-gray-900">
@@ -193,8 +189,6 @@ function App() {
           setPersonalityMode={setPersonalityMode}
           suitsMode={suitsMode}
           setSuitsMode={setSuitsMode}
-          aiProvider={aiProvider}
-          onProviderChange={handleProviderChange}
           onClose={() => setShowSettings(false)}
         />
       )}
@@ -257,7 +251,7 @@ function App() {
             </div>
             <div className="ml-3">
               <p className="text-sm">
-                <strong>API Key Required:</strong> Add your AI API key to environment variables to enable dynamic content generation.
+                <strong>Gemini API Key Required:</strong> Add your VITE_GEMINI_API_KEY to environment variables to enable AI-generated content.
               </p>
             </div>
           </div>

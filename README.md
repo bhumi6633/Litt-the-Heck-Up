@@ -35,8 +35,37 @@ I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little
 
 - **React.js** + **Tailwind CSS**
 -  `localStorage` to save your goal history
--  * Gemini Pro / OpenAI for AI-generated quotes and plans
+-  **Google Gemini Pro** for AI-generated quotes and plans
 -  Hosted on Vercel
+
+---
+
+### 🚀 Quick Setup
+
+1. **Clone & Install**
+   ```bash
+   git clone <your-repo>
+   cd Litt-the-Heck-Up
+   npm install
+   ```
+
+2. **Add Your Gemini API Key**
+   ```bash
+   # Copy .env.example to .env
+   cp .env.example .env
+   
+   # Edit .env and add your Gemini API key
+   VITE_GEMINI_API_KEY=your_actual_gemini_key_here
+   ```
+   
+   Get your free API key from: https://makersuite.google.com/app/apikey
+
+3. **Run the App**
+   ```bash
+   npm run dev
+   ```
+   
+   Open http://localhost:3000 and start getting Litt!
 
 ---
 

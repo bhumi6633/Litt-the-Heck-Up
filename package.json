@@ -2,6 +2,7 @@
   "name": "litt-the-heck-up",
   "version": "1.0.0",
   "description": "A Suits-inspired motivation web app",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "vite",

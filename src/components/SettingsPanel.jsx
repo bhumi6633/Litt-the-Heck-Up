@@ -1,16 +1,12 @@
-import React, { useState } from 'react';
-import ConnectionTest from './ConnectionTest.jsx';
+import React from 'react';
 
 const SettingsPanel = ({
   personalityMode,
   setPersonalityMode,
   suitsMode,
   setSuitsMode,
-  aiProvider,
-  onProviderChange,
   onClose
 }) => {
-  const [showConnectionTest, setShowConnectionTest] = useState(false);
   const characters = [
     { id: 'harvey', name: 'Harvey Specter', emoji: '💼', description: 'Bold, confident, and results-oriented' },
     { id: 'donna', name: 'Donna Paulsen', emoji: '👑', description: 'Wise, supportive, and empowering' },
@@ -24,11 +20,7 @@ const SettingsPanel = ({
     { id: 'both', name: 'Both', emoji: '💬🔥', description: 'All 3 - quote, roast, and plan' }
   ];
 
-  const aiProviders = [
-    { id: 'gemini', name: 'Google Gemini', description: 'Fast and creative responses' },
-    { id: 'openai', name: 'OpenAI GPT-4', description: 'High-quality and consistent' },
-    { id: 'anthropic', name: 'Anthropic Claude', description: 'Thoughtful and detailed' }
-  ];
+
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -98,54 +90,7 @@ const SettingsPanel = ({
               </div>
             </div>
 
-            {/* AI Provider */}
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">AI Provider</h3>
-              <div className="space-y-3">
-                {aiProviders.map((provider) => (
-                  <button
-                    key={provider.id}
-                    onClick={() => onProviderChange(provider.id)}
-                    className={`w-full p-4 rounded-lg border-2 transition-all text-left ${
-                      aiProvider === provider.id
-                        ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
-                        : 'border-gray-200 hover:border-indigo-300 text-gray-700'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="font-medium">{provider.name}</div>
-                        <div className="text-sm text-gray-500">{provider.description}</div>
-                      </div>
-                      {aiProvider === provider.id && (
-                        <svg className="w-5 h-5 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      )}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </div>
 
-            {/* API Key Info */}
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-              <h4 className="font-medium text-yellow-800 mb-2">🔑 API Key Required</h4>
-              <p className="text-sm text-yellow-700 mb-3">
-                To use AI-generated content, add your API key to environment variables:
-              </p>
-              <div className="space-y-1 text-xs font-mono text-yellow-800">
-                <div>VITE_GEMINI_API_KEY=your_gemini_key</div>
-                <div>VITE_OPENAI_API_KEY=your_openai_key</div>
-                <div>VITE_ANTHROPIC_API_KEY=your_anthropic_key</div>
-              </div>
-              <button
-                onClick={() => setShowConnectionTest(true)}
-                className="mt-3 px-4 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 transition-colors text-sm"
-              >
-                🔧 Test Connection
-              </button>
-            </div>
           </div>
 
           {/* Close Button */}
@@ -159,11 +104,6 @@ const SettingsPanel = ({
           </div>
         </div>
       </div>
-
-      {/* Connection Test Modal */}
-      {showConnectionTest && (
-        <ConnectionTest onClose={() => setShowConnectionTest(false)} />
-      )}
     </div>
   );
 };

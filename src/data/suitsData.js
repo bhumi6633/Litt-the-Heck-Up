@@ -1,17 +1,7 @@
-// API Configuration
-export const API_CONFIG = {
-  // You can switch between different AI providers
-  provider: 'gemini', // 'gemini', 'openai', 'anthropic'
-  
-  // API Keys (you'll need to add these to your environment variables)
-  GEMINI_API_KEY: import.meta.env.VITE_GEMINI_API_KEY,
-  OPENAI_API_KEY: import.meta.env.VITE_OPENAI_API_KEY,
-  ANTHROPIC_API_KEY: import.meta.env.VITE_ANTHROPIC_API_KEY,
-  
-  // API Endpoints
-  GEMINI_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent',
-  OPENAI_URL: 'https://api.openai.com/v1/chat/completions',
-  ANTHROPIC_URL: 'https://api.anthropic.com/v1/messages'
+// Gemini API Configuration
+export const GEMINI_CONFIG = {
+  API_KEY: import.meta.env.VITE_GEMINI_API_KEY,
+  URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent'
 };
 
 // Prompt templates for different Suits characters
