@@ -5,92 +5,74 @@ class AIService {
     this.provider = API_CONFIG.provider;
     this.apiKey = this.getApiKey();
     this.retryAttempts = 3;
-    this.retryDelay = 1000; // 1 second
+    this.retryDelay = 1000; // ms
   }
 
   getApiKey() {
-    switch (this.provider) {
-      case 'gemini':
-        return API_CONFIG.GEMINI_API_KEY;
-      case 'openai':
-        return API_CONFIG.OPENAI_API_KEY;
-      case 'anthropic':
-        return API_CONFIG.ANTHROPIC_API_KEY;
-      default:
-        return API_CONFIG.GEMINI_API_KEY;
-    }
+    const keys = {
+      gemini: API_CONFIG.GEMINI_API_KEY,
+      openai: API_CONFIG.OPENAI_API_KEY,
+      anthropic: API_CONFIG.ANTHROPIC_API_KEY
+    };
+    return keys[this.provider] || '';
   }
 
-  // Enhanced retry logic
   async retryOperation(operation, attempts = this.retryAttempts) {
     for (let i = 0; i < attempts; i++) {
       try {
         return await operation();
-      } catch (error) {
-        if (i === attempts - 1) throw error;
-        await new Promise(resolve => setTimeout(resolve, this.retryDelay * (i + 1)));
+      } catch (err) {
+        if (i === attempts - 1) throw err;
+        await new Promise(res => setTimeout(res, this.retryDelay * (i + 1)));
       }
     }
   }
 
   async generateContent(prompt, character, contentType) {
     if (!this.apiKey) {
-      throw new Error(`No API key found for ${this.provider}. Please add your API key to environment variables.`);
+      throw new Error(`Missing API key for ${this.provider}.`);
     }
 
-    try {
-      switch (this.provider) {
-        case 'gemini':
-          return await this.retryOperation(() => this.callGeminiAPI(prompt, character, contentType));
-        case 'openai':
-          return await this.retryOperation(() => this.callOpenAIAPI(prompt, character, contentType));
-        case 'anthropic':
-          return await this.retryOperation(() => this.callAnthropicAPI(prompt, character, contentType));
-        default:
-          return await this.retryOperation(() => this.callGeminiAPI(prompt, character, contentType));
-      }
-    } catch (error) {
-      console.error('AI API Error:', error);
-      throw error;
-    }
+    const apiMap = {
+      gemini: () => this.callGeminiAPI(prompt, character, contentType),
+      openai: () => this.callOpenAIAPI(prompt, character, contentType),
+      anthropic: () => this.callAnthropicAPI(prompt, character, contentType)
+    };
+
+    const callAPI = apiMap[this.provider] || apiMap['gemini'];
+    return this.retryOperation(callAPI);
   }
 
   async callGeminiAPI(prompt, character, contentType) {
     const fullPrompt = `${prompt}\n\nUser's goal: ${contentType === 'quote' ? 'Achieving their goals' : 'Their current situation'}\n\nGenerate a ${contentType} in the style of ${character} from Suits.`;
 
-    const response = await fetch(`${API_CONFIG.GEMINI_URL}?key=${this.apiKey}`, {
+    const res = await fetch(`${API_CONFIG.GEMINI_URL}?key=${this.apiKey}`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: [{
-          parts: [{
-            text: fullPrompt
-          }]
-        }],
+        contents: [{ parts: [{ text: fullPrompt }] }],
         generationConfig: {
           temperature: 0.8,
           topK: 40,
           topP: 0.95,
-          maxOutputTokens: 200,
+          maxOutputTokens: 200
         }
       })
     });
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(`Gemini API error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(`Gemini API error: ${res.status} - ${errData.error?.message || 'Unknown error'}`);
     }
 
-    const data = await response.json();
-    return data.candidates[0].content.parts[0].text.trim();
+    const data = await res.json();
+    return data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || ' Gemini returned no content.';
   }
 
   async callOpenAIAPI(prompt, character, contentType) {
     const fullPrompt = `${prompt}\n\nUser's goal: ${contentType === 'quote' ? 'Achieving their goals' : 'Their current situation'}\n\nGenerate a ${contentType} in the style of ${character} from Suits.`;
 
-    const response = await fetch(API_CONFIG.OPENAI_URL, {
+    const res = await fetch(API_CONFIG.OPENAI_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -99,14 +81,8 @@ class AIService {
       body: JSON.stringify({
         model: 'gpt-4',
         messages: [
-          {
-            role: 'system',
-            content: `You are ${character} from Suits. Generate content in their unique style and personality. Be authentic to the character's voice and mannerisms.`
-          },
-          {
-            role: 'user',
-            content: fullPrompt
-          }
+          { role: 'system', content: `You are ${character} from Suits. Be true to their voice.` },
+          { role: 'user', content: fullPrompt }
         ],
         max_tokens: 200,
         temperature: 0.8,
@@ -116,19 +92,19 @@ class AIService {
       })
     });
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(`OpenAI API error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(`OpenAI API error: ${res.status} - ${errData.error?.message || 'Unknown error'}`);
     }
 
-    const data = await response.json();
-    return data.choices[0].message.content.trim();
+    const data = await res.json();
+    return data?.choices?.[0]?.message?.content?.trim() || ' OpenAI returned no content.';
   }
 
   async callAnthropicAPI(prompt, character, contentType) {
     const fullPrompt = `${prompt}\n\nUser's goal: ${contentType === 'quote' ? 'Achieving their goals' : 'Their current situation'}\n\nGenerate a ${contentType} in the style of ${character} from Suits.`;
 
-    const response = await fetch(API_CONFIG.ANTHROPIC_URL, {
+    const res = await fetch(API_CONFIG.ANTHROPIC_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -139,36 +115,28 @@ class AIService {
         model: 'claude-3-sonnet-20240229',
         max_tokens: 200,
         temperature: 0.8,
-        messages: [
-          {
-            role: 'user',
-            content: fullPrompt
-          }
-        ]
+        messages: [{ role: 'user', content: fullPrompt }]
       })
     });
 
-    if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(`Anthropic API error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(`Anthropic API error: ${res.status} - ${errData.error?.message || 'Unknown error'}`);
     }
 
-    const data = await response.json();
-    return data.content[0].text.trim();
+    const data = await res.json();
+    return data?.content?.[0]?.text?.trim() || ' Anthropic returned no content.';
   }
 
-  // Method to switch AI provider
   setProvider(provider) {
     this.provider = provider;
     this.apiKey = this.getApiKey();
   }
 
-  // Method to check if API key is available
   hasApiKey() {
     return !!this.apiKey;
   }
 
-  // Method to get provider status
   getProviderStatus() {
     return {
       provider: this.provider,
@@ -177,29 +145,24 @@ class AIService {
     };
   }
 
-  // Get available providers
   getAvailableProviders() {
-    const providers = [];
-    if (API_CONFIG.GEMINI_API_KEY) providers.push('gemini');
-    if (API_CONFIG.OPENAI_API_KEY) providers.push('openai');
-    if (API_CONFIG.ANTHROPIC_API_KEY) providers.push('anthropic');
-    return providers;
+    const available = [];
+    if (API_CONFIG.GEMINI_API_KEY) available.push('gemini');
+    if (API_CONFIG.OPENAI_API_KEY) available.push('openai');
+    if (API_CONFIG.ANTHROPIC_API_KEY) available.push('anthropic');
+    return available;
   }
 
-  // Test API connection
   async testConnection() {
-    if (!this.hasApiKey()) {
-      return { success: false, error: 'No API key available' };
-    }
+    if (!this.hasApiKey()) return { success: false, error: 'No API key available' };
 
     try {
-      const testPrompt = "Generate a short motivational quote.";
-      await this.generateContent(testPrompt, 'harvey', 'quote');
+      await this.generateContent('Test motivational quote', 'Harvey', 'quote');
       return { success: true, provider: this.provider };
-    } catch (error) {
-      return { success: false, error: error.message };
+    } catch (err) {
+      return { success: false, error: err.message };
     }
   }
 }
 
-export default new AIService(); 
+export default new AIService();
