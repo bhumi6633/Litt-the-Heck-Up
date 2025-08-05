@@ -43,7 +43,7 @@ I’ve always loved Suits (Harvey, Donna, Mike... all of it), so I made a little
 ###  Why I Built This
 
 Because goal-setting apps are boring.  
-Because motivation doesn't need to be fluffy and most important of all : I love and live by Harvey's mindset. **
+Because motivation doesn't need to be fluffy and most important of all : I love and live by Harvey's mindset. 
 
 ---
 
