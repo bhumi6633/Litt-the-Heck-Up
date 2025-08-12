@@ -109,3 +109,4 @@ config.json
 # Backup files
 *.bak
 *.backup 
+.vercel
