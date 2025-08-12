@@ -48,7 +48,7 @@ So I thought why not build something fun before life gets hectic again?
 
 > " I don't have dreams, I have goals. " - Harvey Specter  
 
-Now go get Litt.
+Now go get Litt. Try it out: https://litt-the-heck-up.vercel.app/
 
 ### Made with love, sass, and Suits by Bhumi Shah👩‍💻
 
